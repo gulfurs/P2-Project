@@ -22,7 +22,7 @@ public class SceneLoader : MonoBehaviour
 
     public void GoGroups()
     {
-        SceneManager.LoadScene("Goals");
+        SceneManager.LoadScene("Groups");
     }
 
     public void GoYou()

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Calender.unity
+    path: Assets/Scenes/Calendar.unity
     guid: 32a6689a1fcd4f94c861bc45e7ef8d84
   - enabled: 1
     path: Assets/Scenes/Home.unity
