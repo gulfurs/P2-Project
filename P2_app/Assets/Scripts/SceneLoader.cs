@@ -29,4 +29,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("You");
     }
+
+    public void GoNewGoal()
+    {
+        SceneManager.LoadScene("New_Goal");
+    }
+
 }
