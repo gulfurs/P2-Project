@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lag_2" data-name="Lag 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff8c5a;
+      }
+
+      .cls-2 {
+        fill: #ff5733;
+      }
+    </style>
+  </defs>
+  <g id="Lag_1-2" data-name="Lag 1">
+    <g>
+      <rect class="cls-1" x="4" y="4" width="792" height="392" rx="26" ry="26"/>
+      <path class="cls-2" d="M770,8c12.13,0,22,9.87,22,22V370c0,12.13-9.87,22-22,22H30c-12.13,0-22-9.87-22-22V30c0-12.13,9.87-22,22-22H770m0-8H30C13.43,0,0,13.43,0,30V370c0,16.57,13.43,30,30,30H770c16.57,0,30-13.43,30-30V30c0-16.57-13.43-30-30-30h0Z"/>
+    </g>
+  </g>
+</svg>
