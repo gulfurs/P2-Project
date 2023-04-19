@@ -56,7 +56,6 @@ public class Calendar : MonoBehaviour
     private List<Day> days = new List<Day>();
 
     // Setup in editor since there will always be six weeks. 
-    // Try to figure out why it must be six weeks even though at most there are only 31 days in a month
     public Transform[] weeks;
 
     // This is the text object that displays the current month and year
@@ -64,7 +63,6 @@ public class Calendar : MonoBehaviour
 
     // this currDate is the date our Calendar is currently on. The year and month are based on the calendar, 
     // while the day itself is almost always just 1
-    // If you have some option to select a day in the calendar, you would want the change this objects day value to the last selected day
     public DateTime currDate = DateTime.Now;
 
     // In start we set the Calendar to the current date
@@ -125,7 +123,7 @@ public class Calendar : MonoBehaviour
             }
         }
 
-        ///This just checks if today is on our calendar. If so, we highlight it in green
+        /// This just checks if today is on our calendar. If so, we highlight it in green
         if (DateTime.Now.Year == year && DateTime.Now.Month == month)
         {
             days[(DateTime.Now.Day - 1) + startDay].UpdateColor(Color.green);
