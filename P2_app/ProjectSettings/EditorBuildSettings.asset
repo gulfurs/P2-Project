@@ -26,5 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Goals_scenes/Track_Goal.unity
     guid: a9040488cc67e75429989a3da62ea313
-  m_configObjects:
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a93dcb53d0a1ac042906d96d9e363e99, type: 2}
+  - enabled: 1
+    path: Assets/Scenes/Goals_scenes/Goals_Fitness.unity
+    guid: 9ea632766e4c9a042a9a729ca59466ad
+  m_configObjects: {}
