@@ -16,38 +16,38 @@ public class Calendar : MonoBehaviour
     // Subclass day
     public class Day
     {
-        public int dayNum;
+        public int dayNumber;
         public Color dayColor;
-        public GameObject obj;
+        public GameObject gameObject;
 
         // Constructor of Day
-        public Day(int dayNum, Color dayColor, GameObject obj)
+        public Day(int dayNumber, Color dayColor, GameObject gameObject)
         {
-            this.dayNum = dayNum;
-            this.obj = obj;
+            this.dayNumber = dayNumber;
+            this.gameObject = gameObject;
             UpdateColor(dayColor);
-            UpdateDay(dayNum);
+            UpdateDay(dayNumber);
         }
 
         // Call this when updating the color so that both the dayColor is updated, as well as the visual color on the screen
         public void UpdateColor(Color newColor)
         {
-            obj.GetComponent<Image>().color = newColor;
+            gameObject.GetComponent<Image>().color = newColor;
             dayColor = newColor;
         }
 
         // When updating the day we decide whether we should show the dayNum based on the color of the day
         // This means the color should always be updated before the day is updated
-        public void UpdateDay(int newDayNum)
+        public void UpdateDay(int newDayNumber)
         {
-            this.dayNum = newDayNum;
+            this.dayNumber = newDayNumber;
             if (dayColor == Color.white || dayColor == Color.green)
             {
-                obj.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = (dayNum + 1).ToString();
+                gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = (dayNumber + 1).ToString();
             }
             else
             {
-                obj.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "";
+                gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "";
             }
         }
     }
