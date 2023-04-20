@@ -8,16 +8,16 @@ public class ToggleTest : MonoBehaviour
 {
     ToggleGroup Test;
 
-public Toggle current {
-        get {
-            return toggleGroupInstance.ActiveToggles ().FirstOrDefault (); 
-            }
-        }
+// public Toggle current {
+//         get {
+//             return toggleGroupInstance.ActiveToggles ().FirstOrDefault (); 
+//             }
+//         }
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(current.name);
+        //Debug.Log(current.name);
         Test = GetComponent<ToggleGroup>();
     }
 
