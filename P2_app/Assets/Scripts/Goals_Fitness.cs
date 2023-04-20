@@ -16,11 +16,11 @@ public class Goals_Fitness : MonoBehaviour
         if (goalsFitnessScene == null)
         {
             goalsFitnessScene = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
 
