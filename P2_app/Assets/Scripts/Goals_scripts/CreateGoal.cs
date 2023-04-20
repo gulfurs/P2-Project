@@ -10,12 +10,12 @@ public class CreateGoal : MonoBehaviour
     [SerializeField] private Sprite NoFill;
 
     private Button choiceButton; 
-    private bool isOn = true;
+    //private bool isOn = true;
 
     //public Sprite Fill;
     //public Sprite Nofill;
 
-    void Start()
+    void Awake()
     {
         choiceButton.image.sprite = NoFill;
         choiceButton = GetComponent<Button>();
@@ -23,8 +23,10 @@ public class CreateGoal : MonoBehaviour
     }
 
     void OnClick(){
-        isOn = !isOn;
-        choiceButton.image.sprite = isOn ? NoFill : Fill;
+        if (choiceButton == null) return;
+        //isOn = !isOn;
+        //choiceButton.image.sprite = isOn ? NoFill : Fill;
+        choiceButton.image.sprite = Fill;
     }
 
     // Update is called once per frame
