@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class InvisibleTilClick : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
+    // public static bool Showhidden = false;
+    // public GameObject Hid;
+    // public static InvisibleTilClick GameInstance;
+
     void Start()
     {
         
