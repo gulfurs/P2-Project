@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bagerst
+    uniqueID: 122117957
+    locked: 0
+  - name: forrest
+    uniqueID: 2493044241
+    locked: 0
