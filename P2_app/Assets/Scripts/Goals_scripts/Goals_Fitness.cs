@@ -10,18 +10,24 @@ public class Goals_Fitness : MonoBehaviour
     public TMP_InputField inputField;
 
     public string challenge_name;
+    //public bool done;
 
     private void Awake()
     {
         if (goalsFitnessScene == null)
         {
             goalsFitnessScene = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-           // Destroy(gameObject);
+            Destroy(gameObject);
         }
+    }
+
+    public void SetObjectActive (bool isActive){
+        gameObject.SetActive(isActive);
+       // done = true;
     }
 
     public void SetChallengeName()
