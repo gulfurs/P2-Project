@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - DontDestroy
+  - Item
+  - GroupCanvas
+  - GoalCanvas
   - Canvas
+  - GroupItem
   layers:
   - Default
   - TransparentFX

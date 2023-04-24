@@ -9,6 +9,6 @@ public class Home : MonoBehaviour
 
     public void Awake()
     {
-        display_challenge_name.text = Goals_Fitness.goalsFitnessScene.challenge_name;
+        //display_challenge_name.text = Goals_Fitness.goalsFitnessScene.challenge_name;
     }
 }
