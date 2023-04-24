@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e938a02416b9a5841b559e35addc1d80, type: 3}
-  m_Name: Acquintences
+  m_Name: AAU
   m_EditorClassIdentifier: 
   groupPhoto: {fileID: 0}
   groupName: AAU
-  groupColor: {r: 0.85098046, g: 0.21960786, b: 0, a: 1}
+  groupColor: {r: 1, g: 0.54901963, b: 0.3529412, a: 1}
