@@ -15,3 +15,6 @@ MonoBehaviour:
   groupPhoto: {fileID: 0}
   groupName: Besties
   groupColor: {r: 0.18039216, g: 0.6627451, b: 1, a: 1}
+  groupDescription: Come along and have a good time, we're all friends in this region.
+    Just don't be toxic and we'll not kick you! :)
+  groupChallengers: []

@@ -9,20 +9,20 @@ public class GoalManagement : MonoBehaviour
     public GameObject goalItem;
     public List<ItemManagement> goalItems;
     //public TextMeshProUGUI goalTitle;
-    public float spacing = 50f;
+    public GameObject parentingTab;
     // Start is called before the first frame update
 
 
 
     void Start()
     {
-       
+        StartCoroutine(InitGoals());
     }
 
     // Update is called once per frame
     void Update()
     {
-        IniitializeGoals();
+        
     }
 
     public void IniitializeGoals()
@@ -32,17 +32,21 @@ public class GoalManagement : MonoBehaviour
         GameObject[] prevGoalItems = GameObject.FindGameObjectsWithTag("Item");
         foreach (GameObject prevGoalItem in prevGoalItems)
         {
-            Destroy(prevGoalItem);
+            //Destroy(prevGoalItem);
         }
 
         for (int i = 0; i <= goalItems.Count - 1; i++)
         {
-            GameObject goalObject = Instantiate(goalItem, canvas.transform);
+            GameObject goalObject = Instantiate(goalItem, parentingTab.transform);
             goalObject.tag = "Item";
-            goalObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, i * spacing);
             goalObject.GetComponent<Image>().color = goalItems[i].groupColor;
             goalObject.GetComponentInChildren<TextMeshProUGUI>().text = goalItems[i].groupName;
         }
+    }
+
+    IEnumerator InitGoals() {
+        IniitializeGoals();
+        yield return null;
     }
 }
 
