@@ -66,7 +66,7 @@ public class CreateItem : MonoBehaviour
         //AssetDatabase.SaveAssets();
 
         Debug.Log(goalManagement.GetComponent<GoalManagement>().goalItems.Count);
-        goalManagement.GetComponent<GoalManagement>().IniitializeGoals();
+        goalManagement.GetComponent<GoalManagement>().InitializeGoals();
         ;
     }
 }

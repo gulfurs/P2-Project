@@ -1546,6 +1546,7 @@ MonoBehaviour:
   goalItems:
   - {fileID: 11400000, guid: a1d8fc5b3f647864b88f44d17166c96d, type: 2}
   parentingTab: {fileID: 808800302}
+  prevGoalItems: []
 --- !u!1 &1485423851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,7 +2337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 158}
+  m_AnchoredPosition: {x: 0, y: 129}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1820563697
@@ -2519,7 +2520,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1928409039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2027118824}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: GoTrackGoal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1928409039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,7 +2756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6459612383052173656, guid: 7ba4b8e611925de469ee79608db6546a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -574.8865
+      value: -551
       objectReference: {fileID: 0}
     - target: {fileID: 6459612383052173659, guid: 7ba4b8e611925de469ee79608db6546a, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
