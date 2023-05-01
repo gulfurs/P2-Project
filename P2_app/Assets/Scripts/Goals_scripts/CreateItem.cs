@@ -31,19 +31,19 @@ public class CreateItem : MonoBehaviour
     void Update()
     {
         string inputText = checkInput.GetComponent<TMPro.TMP_InputField>().text;
-        bool isDuplicate = false;
-        var items = AssetDatabase.FindAssets("t:ItemManagement", new[]{ "Assets/Groupitems" }); //Find all items that are labeled in Item Management in the folder GroupItems
-        foreach (var GUID in items)
-        {
-            var path = AssetDatabase.GUIDToAssetPath(GUID); //returns the file path for the scriptable object based on its ID
-            var asset = AssetDatabase.LoadAssetAtPath<ItemManagement>(path); //Loads the asset and it's components with the help from a located path
-            if (string.Equals(asset.groupName, inputText, StringComparison.OrdinalIgnoreCase))
-            {
-                isDuplicate = true;
-                break;
-            }
-        }
-        doneButton.GetComponent<Button>().interactable = !string.IsNullOrEmpty(inputText) && !isDuplicate;
+        // bool isDuplicate = false;
+        // var items = AssetDatabase.FindAssets("t:ItemManagement", new[]{ "Assets/Groupitems" }); //Find all items that are labeled in Item Management in the folder GroupItems
+        // foreach (var GUID in items)
+        // {
+        //     var path = AssetDatabase.GUIDToAssetPath(GUID); //returns the file path for the scriptable object based on its ID
+        //     var asset = AssetDatabase.LoadAssetAtPath<ItemManagement>(path); //Loads the asset and it's components with the help from a located path
+        //     if (string.Equals(asset.groupName, inputText, StringComparison.OrdinalIgnoreCase))
+        //     {
+        //         isDuplicate = true;
+        //         break;
+        //     }
+        // }
+        doneButton.GetComponent<Button>().interactable = !string.IsNullOrEmpty(inputText) /*&& !isDuplicate */;
     }
 
     public void CreatingItem(GameObject groupInput)

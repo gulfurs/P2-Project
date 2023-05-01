@@ -40,7 +40,7 @@ public class GroupManagement : MonoBehaviour
             GameObject groupObject = Instantiate(groupItem, parentTab.transform);
             groupObject.tag = "GroupItem";
             groupObject.GetComponent<Image>().color = GroupItems[i].groupColor;
-            groupObject.GetComponentInChildren<Text>().text = GroupItems[i].groupName;
+            groupObject.GetComponentInChildren<TextMeshProUGUI>().text = GroupItems[i].groupName;
             
             
             Transform leaderboardCanvas = groupObject.transform.Find("LeaderboardCanvas/LeaderTab");
