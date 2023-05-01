@@ -9,8 +9,7 @@ public class GroupManagement : MonoBehaviour
     public GameObject groupItem;
     public List<ItemManagement> GroupItems;
     public TextMeshProUGUI groupTitle;
-    public float spacing = 50f;
-    public GameObject groupTab;
+    public GameObject parentTab;
     // Start is called before the first frame update
 
 
@@ -28,7 +27,7 @@ public class GroupManagement : MonoBehaviour
 
     public void InitGroups()
 	{
-        Canvas canvas = GameObject.FindGameObjectWithTag("GroupCanvas").GetComponent<Canvas>();
+        //Canvas canvas = GameObject.FindGameObjectWithTag("GroupCanvas").GetComponent<Canvas>();
 
         GameObject[] prevGroupItems = GameObject.FindGameObjectsWithTag("GroupItem");
         foreach (GameObject prevGroupItem in prevGroupItems)
@@ -38,17 +37,19 @@ public class GroupManagement : MonoBehaviour
 
         for (int i = 0; i <= GroupItems.Count - 1; i++)
         {
-            GameObject groupObject = Instantiate(groupItem, canvas.transform);
+            GameObject groupObject = Instantiate(groupItem, parentTab.transform);
             groupObject.tag = "GroupItem";
-            groupObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, i * spacing);
             groupObject.GetComponent<Image>().color = GroupItems[i].groupColor;
             groupObject.GetComponentInChildren<Text>().text = GroupItems[i].groupName;
+            
+            
+            Transform leaderboardCanvas = groupObject.transform.Find("LeaderboardCanvas/LeaderTab");
+            leaderboardCanvas.GetComponentInChildren<TextMeshProUGUI>(true).text = GroupItems[i].groupName;
+            leaderboardCanvas.GetComponentInChildren<Image>(true).color = GroupItems[i].groupColor;
 
+            Transform groupDesc = groupObject.transform.Find("LeaderboardCanvas/LeaderTab/UpperTab/Description");
+            groupDesc.GetComponent<TextMeshProUGUI>().text = GroupItems[i].groupDescription;
         }
     }
-
-    public void ChangeToGroup() {
-        groupTab.SetActive(true);
-        Debug.Log("Initializing Change to Group");
-    }
+    
 }

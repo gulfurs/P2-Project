@@ -15,3 +15,5 @@ MonoBehaviour:
   groupPhoto: {fileID: 0}
   groupName: AAU
   groupColor: {r: 1, g: 0.54901963, b: 0.3529412, a: 1}
+  groupDescription: "Elever p\xE5 AAU, vi vilder den max ud"
+  groupChallengers: []

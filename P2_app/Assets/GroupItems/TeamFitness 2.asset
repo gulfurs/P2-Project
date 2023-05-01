@@ -15,3 +15,5 @@ MonoBehaviour:
   groupPhoto: {fileID: 0}
   groupName: TeamFitness
   groupColor: {r: 0.83921576, g: 0.65882355, b: 0, a: 1}
+  groupDescription: It's about DRIVE!
+  groupChallengers: []

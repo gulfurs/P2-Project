@@ -8,5 +8,8 @@ public class ItemManagement : ScriptableObject
     public Sprite groupPhoto;
     public string groupName;
     public Color groupColor;
+    public string groupDescription;
+    public string[] groupChallengers;
+    
 }
     
