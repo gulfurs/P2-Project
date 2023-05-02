@@ -22,6 +22,7 @@ public class Scroll_script : MonoBehaviour
             if (touch.phase == TouchPhase.Moved)
                 {
                 scrollRect.verticalNormalizedPosition += touch.deltaPosition.y / scrollRect.content.rect.height;
+                Debug.Log("pis");
                 }
             }
         }
