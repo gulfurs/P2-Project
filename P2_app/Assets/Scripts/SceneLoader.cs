@@ -39,5 +39,9 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Goals_Fitness");
     }
 
+    public void GoTrackGoal()
+    {
+        SceneManager.LoadScene("Track_Goal");
+    }
 
 }
