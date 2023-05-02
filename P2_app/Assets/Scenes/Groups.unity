@@ -447,16 +447,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ae018287ef564b4a95ce3c99c6fa925, type: 2}
   - {fileID: 11400000, guid: d4b789536e2382449909bcb8256c0baa, type: 2}
   - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
-  - {fileID: 11400000, guid: a59956f843b2d4a4eabd9a7727a14044, type: 2}
+  - {fileID: 11400000, guid: a1d8fc5b3f647864b88f44d17166c96d, type: 2}
   groupTitle: {fileID: 0}
   parentTab: {fileID: 497481222}
 --- !u!1 &104926383
@@ -3604,7 +3595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Planting
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a05179038f2f4241b402deafdf9fcbc, type: 2}
   m_sharedMaterial: {fileID: 7572942493016021651, guid: 2a05179038f2f4241b402deafdf9fcbc, type: 2}
