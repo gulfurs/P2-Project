@@ -19,7 +19,7 @@ public class Calendar : MonoBehaviour
         public int dayNumber;
         public Color dayColor;
         public GameObject gameObject;
-
+        public Color ourGreen = new Color(108f/255f, 197f/255f, 113f / 255f, 255f / 255f);
         // Constructor of Day
         public Day(int dayNumber, Color dayColor, GameObject gameObject)
         {
@@ -41,7 +41,7 @@ public class Calendar : MonoBehaviour
         public void UpdateDay(int newDayNumber)
         {
             this.dayNumber = newDayNumber;
-            if (dayColor == Color.white || dayColor == Color.green)
+            if (dayColor == Color.white || dayColor == ourGreen)
             {
                 gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = (dayNumber + 1).ToString();
             }
@@ -94,7 +94,7 @@ public class Calendar : MonoBehaviour
                     int currDay = (w * 7) + i;
                     if (currDay < startDay || currDay - startDay >= endDay)
                     {
-                        newDay = new Day(currDay - startDay, Color.grey, weeks[w].GetChild(i).gameObject);
+                        newDay = new Day(currDay - startDay, Color.clear, weeks[w].GetChild(i).gameObject);
                     }
                     else
                     {
@@ -112,7 +112,7 @@ public class Calendar : MonoBehaviour
             {
                 if (i < startDay || i - startDay >= endDay)
                 {
-                    days[i].UpdateColor(Color.grey);
+                    days[i].UpdateColor(Color.clear);
                 }
                 else
                 {
@@ -122,12 +122,13 @@ public class Calendar : MonoBehaviour
                 days[i].UpdateDay(i - startDay);
             }
         }
-
+        Color ourGreen = new Color(108f / 255f, 197f / 255f, 113f / 255f, 255f / 255f);
         /// This just checks if today is on our calendar. If so, we highlight it in green
         if (DateTime.Now.Year == year && DateTime.Now.Month == month)
         {
-            days[(DateTime.Now.Day - 1) + startDay].UpdateColor(Color.green);
+            days[(DateTime.Now.Day - 1) + startDay].gameObject.GetComponent<Image>().color = ourGreen;
         }
+       
 
     }
 
