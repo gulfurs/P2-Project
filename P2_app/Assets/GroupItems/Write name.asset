@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Write name
   m_EditorClassIdentifier: 
   groupPhoto: {fileID: 0}
-  groupName: Write name
-  groupColor: {r: 0.23529413, g: 0.627451, b: 0.81568635, a: 1}
+  groupName: Good Sleep
+  groupColor: {r: 1, g: 0.78823537, b: 0.40000004, a: 1}
+  groupDescription: For the resident sleepers, All about having a good time
+  groupChallengers: []

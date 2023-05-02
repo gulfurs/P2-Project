@@ -19,7 +19,8 @@ public class CreateItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        goalManagement = GameObject.FindGameObjectWithTag("EditorOnly");
+        //goalManagement = GameObject.FindGameObjectWithTag("EditorOnly");
+        goalManagement = GameObject.Find("GoalManager");
         if (goalManagement != null)
         {
             //listOfGoals = goalManagement;
@@ -49,7 +50,7 @@ public class CreateItem : MonoBehaviour
     public void CreatingItem(GameObject groupInput)
     {
         string nameInput = groupInput.GetComponent<TMPro.TMP_InputField>().text;
-        string filepath = "Assets/Groupitems/" + nameInput + ".asset";
+        //string filepath = "Assets/Groupitems/" + nameInput + ".asset";
         // Create a new instance of the ScriptableObject
         var newItem = Instantiate(itemTemp);
 
@@ -59,6 +60,7 @@ public class CreateItem : MonoBehaviour
         newItem.groupColor = new Color(1f, 0.549f, 0.353f);
 
         listOfGoals.Add(newItem);
+        
         goalManagement.GetComponent<GoalManagement>().goalItems = listOfGoals;
 
         // Saves the item as an asset in the project (if we need it)
