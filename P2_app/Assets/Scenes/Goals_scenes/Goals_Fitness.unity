@@ -1004,18 +1004,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2007444889}
-        m_TargetAssemblyTypeName: CreateItem, Assembly-CSharp
-        m_MethodName: CreatingItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1319734739}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1107905557}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: GoGoals
@@ -8748,7 +8736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -541.49945, y: 1500.0007}
+  m_AnchoredPosition: {x: -541.49945, y: 1499.9999}
   m_SizeDelta: {x: 1081.24, y: 3000}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &813014529
@@ -16315,7 +16303,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 453942605}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999993
+  m_Size: 0.9999987
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
