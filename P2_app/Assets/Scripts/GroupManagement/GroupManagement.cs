@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,6 +49,16 @@ public class GroupManagement : MonoBehaviour
 
             Transform groupDesc = groupObject.transform.Find("LeaderboardCanvas/LeaderTab/UpperTab/Description");
             groupDesc.GetComponent<TextMeshProUGUI>().text = GroupItems[i].groupDescription;
+
+            Transform lbList = groupObject.transform.Find("LeaderboardCanvas/LeaderTab/LowerTab/Leaderboard");
+            TextMeshProUGUI[] lbListing = lbList.GetComponentsInChildren<TextMeshProUGUI>();
+            Dictionary<TextMeshProUGUI, string> lbTextDict = new Dictionary<TextMeshProUGUI, string>();
+
+            foreach (TextMeshProUGUI lbItem in lbListing)
+            {
+                Debug.Log(lbItem.text);
+                lbTextDict[lbItem] = lbItem.text;
+            }
         }
     }
     

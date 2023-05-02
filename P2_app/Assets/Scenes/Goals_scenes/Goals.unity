@@ -286,10 +286,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2142,7 +2142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42352945, g: 0.7725491, b: 0.4431373, a: 1}
+  m_Color: {r: 0.3921569, g: 0.7137255, b: 0.41176474, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2360,7 +2360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TemplateText
+  m_text: Cleaning
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a05179038f2f4241b402deafdf9fcbc, type: 2}
   m_sharedMaterial: {fileID: 7572942493016021651, guid: 2a05179038f2f4241b402deafdf9fcbc, type: 2}
