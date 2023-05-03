@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class PhoneCam2 : MonoBehaviour
 {
     WebCamTexture webCam;
-    //string your_path = "C:\\alinajaseneckaja\\Desktop";// any path you want to save your image
+    string your_path = "C:\\ Desktop";// any path you want to save your image
     public RawImage display;
     public AspectRatioFitter fit;
 
@@ -38,7 +38,7 @@ public class PhoneCam2 : MonoBehaviour
         WebCamDevice device = WebCamTexture.devices[index];
         webCam = new WebCamTexture(device.name);
         webCam.Play();
-        //StartCoroutine(TakePhoto());
+        StartCoroutine(TakePhoto());
         display.texture = webCam;
 
     }
@@ -59,7 +59,7 @@ public class PhoneCam2 : MonoBehaviour
 
     }
 
-    /* public void callTakePhoto() // call this function in button click event
+    public void callTakePhoto() // call this function in button click event
     {
         StartCoroutine(TakePhoto());
     }
@@ -84,5 +84,5 @@ public class PhoneCam2 : MonoBehaviour
         //Write out the PNG. Of course you have to substitute your_path for something sensible
         File.WriteAllBytes(your_path + "\\photo.png", bytes);
 
-    } */
+    }
 }
