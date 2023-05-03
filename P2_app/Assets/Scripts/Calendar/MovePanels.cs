@@ -16,33 +16,27 @@ public class MovePanels : MonoBehaviour
     private Vector3 startPointImages;
     private Vector3 endPointImages;
 
-    private float startTime;
     public float t;
 
     // Start is called before the first frame update
     void Start()
     {
-        calendarObj = GameObject.Find("Calendar");
-        imagesObj = GameObject.Find("Fictional Images Title");
-      
-
         startPointCalendar = calendarObj.transform.position;
         endPointCalendar = new Vector3(540, 1300 ,0);
 
         startPointImages = imagesObj.transform.position;
         endPointImages = new Vector3(254, 850, 0);
-        startTime = Time.time;
         calendarIsMoving = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-       if(calendarIsMoving == 1) 
+       if(calendarIsMoving == 1 && imagesObj.transform.position != endPointImages) 
         {
          MoveStuffUp();
         }
-       else if(calendarIsMoving == 2)
+       else if(calendarIsMoving == 2 && imagesObj.transform.position != startPointImages)
         {
         MoveStuffDown();
         }
