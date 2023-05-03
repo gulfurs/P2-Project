@@ -5,10 +5,10 @@ using TMPro;
 
 public class Home : MonoBehaviour
 {
-    public TextMeshProUGUI display_challenge_name;
+    // public TextMeshProUGUI display_challenge_name;
 
     public void Awake()
     {
-        display_challenge_name.text = Goals_Fitness.goalsFitnessScene.challenge_name;
+        //display_challenge_name.text = Goals_Fitness.goalsFitnessScene.challenge_name;
     }
 }

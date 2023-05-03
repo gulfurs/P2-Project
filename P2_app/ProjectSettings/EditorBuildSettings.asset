@@ -5,30 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Home.unity
     guid: cb2ec637e20080c41b13340ce54eaf0e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Calendar.unity
     guid: 32a6689a1fcd4f94c861bc45e7ef8d84
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Groups.unity
     guid: dcf007c4cf07ec6419583e9d4f9a1125
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/You.unity
     guid: 816a8b772efe4cf49af9626c092e17fd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Goals_scenes/Goals.unity
     guid: be0e8a2430ff9bb4c848b257db52480b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Goals_scenes/New_Goal.unity
     guid: 55dca10ce77ec7b47a4e13912c3435df
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Goals_scenes/Track_Goal.unity
     guid: a9040488cc67e75429989a3da62ea313
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Goals_scenes/Goals_Fitness.unity
     guid: 9ea632766e4c9a042a9a729ca59466ad
+  - enabled: 1
+    path: Assets/Scenes/Tracker.unity
+    guid: d33a39aeefe70604e9a6988ef939dafc
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 0fc86eca0a6d0da43839f9ad10704cbf, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 26ec41ce73d4f8f4da5215beae81b8bf, type: 2}
