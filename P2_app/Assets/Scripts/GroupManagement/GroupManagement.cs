@@ -28,12 +28,12 @@ public class GroupManagement : MonoBehaviour
     public void InitGroups()
 	{
         //Canvas canvas = GameObject.FindGameObjectWithTag("GroupCanvas").GetComponent<Canvas>();
-
+        /*
         GameObject[] prevGroupItems = GameObject.FindGameObjectsWithTag("GroupItem");
         foreach (GameObject prevGroupItem in prevGroupItems)
         {
             Destroy(prevGroupItem);
-        }
+        }*/
 
         for (int i = 0; i <= GroupItems.Count - 1; i++)
         {
