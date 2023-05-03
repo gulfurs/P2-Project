@@ -10,6 +10,8 @@ TagManager:
   - GoalCanvas
   - Canvas
   - GroupItem
+  - Calendar
+  - IMG
   layers:
   - Default
   - TransparentFX
