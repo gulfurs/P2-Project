@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraGBT : MonoBehaviour
 {
     private WebCamTexture camTexture;
+    private RawImage img;
 
     private void Start()
     {
@@ -14,9 +16,12 @@ public class CameraGBT : MonoBehaviour
         if (devices.Length > 0)
         {
             camTexture = new WebCamTexture(devices[0].name);
-            GetComponent<Renderer>().material.mainTexture = camTexture;
+            //GetComponent<Renderer>().material.mainTexture = camTexture;
             camTexture.Play();
         }
+        img = GetComponent<RawImage>();
+        img.texture = camTexture;
+        img.material = null;
     }
 
     public void TakePhoto()
