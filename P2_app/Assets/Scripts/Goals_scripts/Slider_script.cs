@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class Slider_script : MonoBehaviour
 {
     private Slider progressbar;
+    public GameObject done;
     private float target = 0;
-    public float FillSpeed = 100000.1f;
+    public float FillSpeed = 0.1f;
+    //private bool filledup = false;
 
     private void Awake(){
         progressbar = gameObject.GetComponent<Slider>();
@@ -15,14 +17,21 @@ public class Slider_script : MonoBehaviour
     void Start()
     {
         Progress(1f);
+       
     }
 
     void FixedUpdate()
     {
         if(progressbar.value < target){
-            progressbar.value += 0.01f * (Time.deltaTime * FillSpeed);
-            Debug.Log(Time.deltaTime * FillSpeed);
+            progressbar.value += 0.05f * (Time.deltaTime * FillSpeed);
+        }else{
+            //filledup = true;
+            //if(filledup = true){
+            done.SetActive(true);
+            //Debug.Log("Done Button appears");
+            //}
         }
+        
     }
 
     public void Progress(float newProgress){
