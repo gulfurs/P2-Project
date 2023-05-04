@@ -9,12 +9,7 @@ public class ProfilePicture : MonoBehaviour
     [SerializeField] private GameObject editButton;
     [SerializeField] private Image profilePicture;
     [SerializeField] private Image replaceProfilePicture;
-    // Start is called before the first frame update
-   
-    private void Update()
-    {
-        profilePicture.sprite = replaceProfilePicture.sprite;
-    }
+ 
 
     // This is a toggle
     // If the gameObject (The profile pictures) are inactive, it makes them active and vice versus
@@ -34,6 +29,7 @@ public class ProfilePicture : MonoBehaviour
        // Finds the image on the button that is pressed
         replaceProfilePicture = EventSystem.current.currentSelectedGameObject.GetComponent<Image>();
         editButton.gameObject.SetActive(false);
+        profilePicture.sprite = replaceProfilePicture.sprite;
     }
 
 }
