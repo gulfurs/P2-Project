@@ -10,10 +10,7 @@ public class ProfilePicture : MonoBehaviour
     [SerializeField] private Image profilePicture;
     [SerializeField] private Image replaceProfilePicture;
     // Start is called before the first frame update
-    private void Awake()
-    {
-       
-    }
+   
     private void Update()
     {
         profilePicture.sprite = replaceProfilePicture.sprite;
@@ -34,8 +31,9 @@ public class ProfilePicture : MonoBehaviour
     }
     public void ProfileChanger()
     {
-       // string clickedButtonName = EventSystem.current.currentSelectedGameObject.name;
+       // Finds the image on the button that is pressed
         replaceProfilePicture = EventSystem.current.currentSelectedGameObject.GetComponent<Image>();
+        editButton.gameObject.SetActive(false);
     }
 
 }

@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Calendar.unity
     guid: 32a6689a1fcd4f94c861bc45e7ef8d84
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Groups.unity
     guid: dcf007c4cf07ec6419583e9d4f9a1125
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/You.unity
     guid: 816a8b772efe4cf49af9626c092e17fd
   - enabled: 0
