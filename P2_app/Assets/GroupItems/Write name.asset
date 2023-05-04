@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e938a02416b9a5841b559e35addc1d80, type: 3}
   m_Name: Write name
   m_EditorClassIdentifier: 
-  groupPhoto: {fileID: 0}
+  groupPhoto: {fileID: 21300000, guid: de6c4fa0723e47d4ea9f3122bdfbf49f, type: 3}
   groupName: Good Sleep
   groupColor: {r: 1, g: 0.78823537, b: 0.40000004, a: 1}
   groupDescription: For the resident sleepers, All about having a good time

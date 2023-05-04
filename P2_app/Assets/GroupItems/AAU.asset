@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e938a02416b9a5841b559e35addc1d80, type: 3}
   m_Name: AAU
   m_EditorClassIdentifier: 
-  groupPhoto: {fileID: 0}
+  groupPhoto: {fileID: 21300000, guid: e1b38cfcd61bab5499f6948991026139, type: 3}
   groupName: AAU
   groupColor: {r: 1, g: 0.54901963, b: 0.3529412, a: 1}
   groupDescription: "Elever p\xE5 AAU, vi vilder den max ud"

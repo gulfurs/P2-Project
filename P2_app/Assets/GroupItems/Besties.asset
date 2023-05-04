@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e938a02416b9a5841b559e35addc1d80, type: 3}
   m_Name: Besties
   m_EditorClassIdentifier: 
-  groupPhoto: {fileID: 0}
+  groupPhoto: {fileID: 21300000, guid: 3dae24d780a78004e93ef1f863106593, type: 3}
   groupName: Besties
   groupColor: {r: 0.18039216, g: 0.6627451, b: 1, a: 1}
   groupDescription: Come along and have a good time, we're all friends in this region.

@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,8 +10,10 @@ public class GroupManagement : MonoBehaviour
     public List<ItemManagement> GroupItems;
     public TextMeshProUGUI groupTitle;
     public GameObject parentTab;
+    //public Sprite deleteButtonSprite;
+    public GameObject deleteButton;
     // Start is called before the first frame update
-
+    //public string = 
 
 
     void Start()
@@ -39,27 +41,40 @@ public class GroupManagement : MonoBehaviour
         {
             GameObject groupObject = Instantiate(groupItem, parentTab.transform);
             groupObject.tag = "GroupItem";
+            groupObject.name = "GroupItem " + i;
             groupObject.GetComponent<Image>().color = GroupItems[i].groupColor;
             groupObject.GetComponentInChildren<TextMeshProUGUI>().text = GroupItems[i].groupName;
-            
-            
-            Transform leaderboardCanvas = groupObject.transform.Find("LeaderboardCanvas/LeaderTab");
-            leaderboardCanvas.GetComponentInChildren<TextMeshProUGUI>(true).text = GroupItems[i].groupName;
-            leaderboardCanvas.GetComponentInChildren<Image>(true).color = GroupItems[i].groupColor;
+            Transform imageOfGroup = groupObject.transform.Find("GroupPhoto");
+            imageOfGroup.GetComponent<Image>().sprite = GroupItems[i].groupPhoto;
 
-            Transform groupDesc = groupObject.transform.Find("LeaderboardCanvas/LeaderTab/UpperTab/Description");
-            groupDesc.GetComponent<TextMeshProUGUI>().text = GroupItems[i].groupDescription;
+            //Gameobject path
+            string objectPath = "LeaderboardCanvas/LeaderTab/ScrollGroup/MyGroup/";
 
-            Transform lbList = groupObject.transform.Find("LeaderboardCanvas/LeaderTab/LowerTab/Leaderboard");
-            TextMeshProUGUI[] lbListing = lbList.GetComponentsInChildren<TextMeshProUGUI>();
-            Dictionary<TextMeshProUGUI, string> lbTextDict = new Dictionary<TextMeshProUGUI, string>();
+            //Title of the group
+            Transform titleOfGroup = groupObject.transform.Find(objectPath + "UpperTab/GroupTitle");
+            titleOfGroup.GetComponent<TextMeshProUGUI>().text = GroupItems[i].groupName;
 
-            foreach (TextMeshProUGUI lbItem in lbListing)
-            {
-                Debug.Log(lbItem.text);
-                lbTextDict[lbItem] = lbItem.text;
-            }
+            //Delete Button is instantiated here using the template
+            GameObject delbutton = Instantiate(this.deleteButton, groupObject.transform);
+            delbutton.transform.SetParent(groupObject.transform.Find(objectPath + "LowerTab"), false);
+            delbutton.name = "DeleteButton";
+            delbutton.GetComponent<Button>().onClick.AddListener(() => DeleteGroup(groupObject));
+
+            //Color theme is covered here
+            Transform upperTab = groupObject.transform.Find(objectPath + "UpperTab");
+            upperTab.GetComponent<Image>().color = GroupItems[i].groupColor;
+            Transform lowerTab = groupObject.transform.Find(objectPath + "LowerTab");
+            lowerTab.GetComponent<Image>().color = GroupItems[i].groupColor;
+
+            //Changes the group description.
+            Transform DescOfGroup = groupObject.transform.Find(objectPath + "UpperTab/Description");
+            DescOfGroup.GetComponent<TextMeshProUGUI>().text = GroupItems[i].groupDescription;
         }
     }
-    
+
+    void DeleteGroup(GameObject obj)
+    {
+        Destroy(obj);
+    }
+
 }
