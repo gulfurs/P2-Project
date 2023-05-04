@@ -450,7 +450,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1d8fc5b3f647864b88f44d17166c96d, type: 2}
   groupTitle: {fileID: 0}
   parentTab: {fileID: 755767705}
-  deleteButtonTemplate: {fileID: 1032323345}
+  deleteButton: {fileID: 1032323345}
 --- !u!1 &104926383
 GameObject:
   m_ObjectHideFlags: 0
@@ -11182,7 +11182,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90a0174c221671742ab9f5e8fe5f0880, type: 2}
   groupTitle: {fileID: 0}
   parentTab: {fileID: 1003175719}
-  deleteButtonTemplate: {fileID: 1032323345}
+  deleteButton: {fileID: 1032323345}
 --- !u!1 &1527085605
 GameObject:
   m_ObjectHideFlags: 0
