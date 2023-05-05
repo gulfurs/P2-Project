@@ -16,4 +16,9 @@ MonoBehaviour:
   groupName: Good Sleep
   groupColor: {r: 1, g: 0.78823537, b: 0.40000004, a: 1}
   groupDescription: For the resident sleepers, All about having a good time
-  groupChallengers: []
+  groupChallengers:
+  - Camilla (You)
+  - Rolf
+  groupStats:
+  - 9 hours
+  - 3 hours

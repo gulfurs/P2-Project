@@ -16,4 +16,15 @@ MonoBehaviour:
   groupName: TeamFitness
   groupColor: {r: 0.83921576, g: 0.65882355, b: 0, a: 1}
   groupDescription: It's about DRIVE!
-  groupChallengers: []
+  groupChallengers:
+  - Camilla (You)
+  - Malthe
+  - Anders
+  - Duke
+  - Peter
+  groupStats:
+  - Done
+  - Done
+  - Done
+  - Not Done
+  - Not Done

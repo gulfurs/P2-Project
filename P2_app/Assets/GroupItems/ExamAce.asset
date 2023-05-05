@@ -16,4 +16,13 @@ MonoBehaviour:
   groupName: Exam Ace
   groupColor: {r: 0.854902, g: 0.7490196, b: 0.63529414, a: 1}
   groupDescription: 
-  groupChallengers: []
+  groupChallengers:
+  - Reagan
+  - Rocky
+  - Yuri
+  - Mads
+  groupStats:
+  - Done
+  - Done
+  - Done
+  - Not Done

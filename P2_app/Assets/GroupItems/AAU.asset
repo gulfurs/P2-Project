@@ -16,4 +16,25 @@ MonoBehaviour:
   groupName: AAU
   groupColor: {r: 1, g: 0.54901963, b: 0.3529412, a: 1}
   groupDescription: "Elever p\xE5 AAU, vi vilder den max ud"
-  groupChallengers: []
+  groupChallengers:
+  - Olando
+  - Tyrone
+  - Hilda
+  - Rocky
+  - Shawn
+  - Camilla (You)
+  - Phillip
+  - Ea
+  - Donald
+  - Jesper
+  groupStats:
+  - 21 km
+  - 18 km
+  - 15 km
+  - 13 km
+  - 10 km
+  - 8 km
+  - 7 km
+  - 5 km
+  - 4 km
+  - 3 km
