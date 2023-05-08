@@ -16,6 +16,8 @@ public class GroupManagement : MonoBehaviour
     // Start is called before the first frame update
     //public string = 
 
+    List<TextMeshProUGUI> namesOfChallengers;
+    List<TextMeshProUGUI> statsOfChallengers;
 
     void Start()
     {
@@ -130,6 +132,24 @@ public class GroupManagement : MonoBehaviour
         newStats[newStats.Length - 1] = "0";
         item.groupStats = newStats;
         MemberRights(del);
+
+        //List<TextMeshProUGUI> namesOfChallengers = new List<TextMeshProUGUI>();
+        //List<TextMeshProUGUI> statsOfChallengers = new List<TextMeshProUGUI>();
+        
+        for (int j = 0; j < namesOfChallengers.Count && j < item.groupChallengers.Length && j < item.groupStats.Length; j++)
+        {
+            //namesOfChallengers[j].text = item.groupChallengers[j];
+            //statsOfChallengers[j].text = item.groupStats[j];
+
+            if (namesOfChallengers[j].text.EndsWith("(You)"))
+            {
+                namesOfChallengers[j].color = item.groupColor;
+            }
+            for (int i = 0; i < namesOfChallengers.Count; i++)
+            {
+                Debug.Log(namesOfChallengers[i].text + " " + i + "\n" + item.groupChallengers[j]);
+            }
+        }
         //UpdateChallengerData(obj.transform.Find("LeaderboardCanvas/LeaderTab/ScrollGroup/MyGroup/" + "Ranks"), item.groupChallengers, item.groupStats, item.groupColor);
     }
 
@@ -150,8 +170,8 @@ public class GroupManagement : MonoBehaviour
     public void UpdateChallengerData(Transform obj, string[] names, string[] stats, Color color)
     {
         TextMeshProUGUI[] challengers = obj.GetComponentsInChildren<TextMeshProUGUI>();
-        List<TextMeshProUGUI> namesOfChallengers = new List<TextMeshProUGUI>();
-        List<TextMeshProUGUI> statsOfChallengers = new List<TextMeshProUGUI>();
+        namesOfChallengers = new List<TextMeshProUGUI>();
+        statsOfChallengers = new List<TextMeshProUGUI>();
 
         // Adds text Names to a list
         for (int j = 0; j < challengers.Length; j++)
