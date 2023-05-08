@@ -17,4 +17,14 @@ MonoBehaviour:
   groupColor: {r: 0.18039216, g: 0.6627451, b: 1, a: 1}
   groupDescription: Come along and have a good time, we're all friends in this region.
     Just don't be toxic and we'll not kick you! :)
-  groupChallengers: []
+  groupStatus: 2
+  groupChallengers:
+  - Rena
+  - Cho
+  - Camilla (You)
+  - Urdu
+  groupStats:
+  - 1800 kcal
+  - 2000 kcal
+  - 2200 kcal
+  - 2400 kcal

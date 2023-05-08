@@ -10,10 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e938a02416b9a5841b559e35addc1d80, type: 3}
-  m_Name: PaintMasters
+  m_Name: ExamAce
   m_EditorClassIdentifier: 
   groupPhoto: {fileID: 21300000, guid: 7e9fe37e52887e442a8072733fc5baf1, type: 3}
-  groupName: PaintMasters
-  groupColor: {r: 0.61960787, g: 0.5372549, b: 0.86666673, a: 1}
+  groupName: Exam Ace
+  groupColor: {r: 0.854902, g: 0.7490196, b: 0.63529414, a: 1}
   groupDescription: 
-  groupChallengers: []
+  groupStatus: 1
+  groupChallengers:
+  - Reagan
+  - Rocky
+  - Yuri
+  - Mads
+  groupStats:
+  - Done
+  - Done
+  - Done
+  - Not Done
