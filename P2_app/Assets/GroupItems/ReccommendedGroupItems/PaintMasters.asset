@@ -16,6 +16,7 @@ MonoBehaviour:
   groupName: PaintMasters
   groupColor: {r: 0.61960787, g: 0.5372549, b: 0.86666673, a: 1}
   groupDescription: 
+  groupStatus: 1
   groupChallengers:
   - Donatello
   - Raphael
