@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 // Whole code from CHATGPT
 public class StepDetectorScript : MonoBehaviour
 {
-    private float accelerationThreshold = 1.2f; // adjust this value as needed
+    private float accelerationThreshold = 1.75f; // adjust this value as needed
     private bool stepDetected = false;
     private int stepCount = 0;
+    [SerializeField] private TextMeshProUGUI tmp;
 
     void Update()
     {
@@ -25,7 +28,7 @@ public class StepDetectorScript : MonoBehaviour
             // Step completed
             stepDetected = false;
         }
-
+        tmp.text = stepCount.ToString();
         Debug.Log("Steps taken: + " + stepCount);
     }
 }
