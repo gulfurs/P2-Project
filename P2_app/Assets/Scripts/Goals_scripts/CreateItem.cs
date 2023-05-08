@@ -20,7 +20,7 @@ public class CreateItem : MonoBehaviour
     void Start()
     {
         //goalManagement = GameObject.FindGameObjectWithTag("EditorOnly");
-        goalManagement = GameObject.Find("GoalManager") as GameObject;
+        goalManagement = GameObject.Find("GoalManagement") as GameObject;
         //listOfGoals = goalManagement;
         listOfGoals = goalManagement.GetComponent<GoalManagement>().goalItems;
     }
@@ -57,7 +57,7 @@ public class CreateItem : MonoBehaviour
         newItem.groupColor = new Color(1f, 0.549f, 0.353f);
 
         listOfGoals.Add(newItem);
-        
+
         goalManagement.GetComponent<GoalManagement>().goalItems = listOfGoals;
 
         // Saves the item as an asset in the project (if we need it)

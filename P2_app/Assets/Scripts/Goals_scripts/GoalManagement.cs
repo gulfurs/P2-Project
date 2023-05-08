@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using UnityEngine.UI;
 using TMPro;
 
@@ -11,7 +10,7 @@ public class GoalManagement : MonoBehaviour
     public List<ItemManagement> goalItems;
     //public TextMeshProUGUI goalTitle;
     public GameObject parentingTab;
-    public GameObject[] prevGoalItems;
+    //public GameObject[] prevGoalItems;
     // Start is called before the first frame update
 
 
@@ -23,15 +22,19 @@ public class GoalManagement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //prevGoalItems = GameObject.FindGameObjectsWithTag("Item");
+        /*GameObject[] getList = GameObject.FindGameObjectsWithTag("Respawn");
+        if (getList != null && getList.Length > 0)
+        {
+            goalItems = getList[0].GetComponent<CreateItem>().listOfGoals;
+        }*/
     }
 
     public void InitializeGoals()
     {
         Canvas canvas = GameObject.FindGameObjectWithTag("GoalCanvas").GetComponent<Canvas>();
-
+        
         for (int i = parentingTab.transform.childCount - 1; i >= 0; i--)
         {
             // Destroy each child object
@@ -48,11 +51,6 @@ public class GoalManagement : MonoBehaviour
         }
 
         
-    }
-
-    IEnumerator InitGoals() {
-        //IniitializeGoals();
-        yield return null;
     }
 }
 
