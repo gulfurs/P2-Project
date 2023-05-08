@@ -9,7 +9,7 @@ public class StepDetectorScript : MonoBehaviour
 {
     private float accelerationThreshold = 1.75f; // adjust this value as needed
     private bool stepDetected = false;
-    public int stepCount = 0;
+    private int stepCount = 0;
     [SerializeField] private TextMeshProUGUI tmp;
 
     void Update()
