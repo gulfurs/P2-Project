@@ -10,27 +10,36 @@ public class Slider_script : MonoBehaviour
     private float target = 0;
     public float FillSpeed = 0.1f;
     //private bool filledup = false;
+    public StepDetectorScript steps;
+    private float sc;
+    float goal = 50;
 
     private void Awake(){
         progressbar = gameObject.GetComponent<Slider>();
     }
     void Start()
     {
-        Progress(1f);
-       
+        Progress(50f);
+
+    }
+
+    void Update() {
+        //sc = steps.stepCount * 0.1f;
+        //progressbar.value = sc;
+        Debug.Log(progressbar.value);
+        if(progressbar.value < target){
+            
+            progressbar.value = steps.stepCount;
+            
+            //progressbar.value += 0.05f * (Time.deltaTime * FillSpeed);
+        }else{
+            done.SetActive(true);
+        }
     }
 
     void FixedUpdate()
     {
-        if(progressbar.value < target){
-            progressbar.value += 0.05f * (Time.deltaTime * FillSpeed);
-        }else{
-            //filledup = true;
-            //if(filledup = true){
-            done.SetActive(true);
-            //Debug.Log("Done Button appears");
-            //}
-        }
+        
         
     }
 
