@@ -135,18 +135,20 @@ public class GroupManagement : MonoBehaviour
 
         //List<TextMeshProUGUI> namesOfChallengers = new List<TextMeshProUGUI>();
         //List<TextMeshProUGUI> statsOfChallengers = new List<TextMeshProUGUI>();
-
+        
         for (int j = 0; j < namesOfChallengers.Count && j < item.groupChallengers.Length && j < item.groupStats.Length; j++)
         {
-            namesOfChallengers[j].text = item.groupChallengers[j];
-            statsOfChallengers[j].text = item.groupStats[j];
+            //namesOfChallengers[j].text = item.groupChallengers[j];
+            //statsOfChallengers[j].text = item.groupStats[j];
 
             if (namesOfChallengers[j].text.EndsWith("(You)"))
             {
                 namesOfChallengers[j].color = item.groupColor;
             }
-
-            Debug.Log(item.groupChallengers);
+            for (int i = 0; i < namesOfChallengers.Count; i++)
+            {
+                Debug.Log(namesOfChallengers[i].text + " " + i + "\n" + item.groupChallengers[j]);
+            }
         }
         //UpdateChallengerData(obj.transform.Find("LeaderboardCanvas/LeaderTab/ScrollGroup/MyGroup/" + "Ranks"), item.groupChallengers, item.groupStats, item.groupColor);
     }
