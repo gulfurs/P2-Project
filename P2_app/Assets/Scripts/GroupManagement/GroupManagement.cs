@@ -11,6 +11,7 @@ public class GroupManagement : MonoBehaviour
     public GameObject CousinItems;
     public TextMeshProUGUI groupTitle;
     public GameObject parentTab;
+    public GameObject uncleTab;
     //public Sprite deleteButtonSprite;
     public GameObject deleteButton;
     // Start is called before the first frame update
@@ -40,6 +41,12 @@ public class GroupManagement : MonoBehaviour
             Destroy(parentTab.transform.GetChild(i).gameObject);
         }
 
+        for (int i = uncleTab.transform.childCount - 1; i >= 0; i--)
+        {
+            // Destroy each child object
+            Destroy(uncleTab.transform.GetChild(i).gameObject);
+        }
+
         for (int i = 0; i <= GroupItems.Count - 1; i++)
         {
             GameObject groupObject = Instantiate(groupItem, parentTab.transform);
@@ -47,6 +54,7 @@ public class GroupManagement : MonoBehaviour
             ItemManagement getItem = groupObject.GetComponent<StoreData>().itemData;
             getItem = GroupItems[i];
             groupObject.name = getItem.groupName;
+            
             groupObject.GetComponent<Image>().color = getItem.groupColor;
             groupObject.GetComponentInChildren<TextMeshProUGUI>().text = getItem.groupName;
             Transform imageOfGroup = groupObject.transform.Find("GroupPhoto");
@@ -85,9 +93,11 @@ public class GroupManagement : MonoBehaviour
             {
                 case GroupStatus.Member:
                     //Manage DeleteButton
+                    groupObject.transform.SetParent(parentTab.transform);
                     MemberRights(delbutton);
                     break;
                 case GroupStatus.Uninvited:
+                    groupObject.transform.SetParent(uncleTab.transform);
                     Transform joinButton = groupObject.transform.Find(objectPath + "UpperTab/Code/HideCode");
                     UninvitedRights(delbutton, joinButton);
                     joinButton.GetComponent<Button>().onClick.AddListener(() => Add2myGroups(groupObject, getItem, delbutton));
@@ -95,6 +105,7 @@ public class GroupManagement : MonoBehaviour
                     break;
                 case GroupStatus.Admin:
                     //Manage DeleteButton
+                    groupObject.transform.SetParent(parentTab.transform);
                     AdminRights(delbutton);
                     break;
             }
@@ -103,15 +114,17 @@ public class GroupManagement : MonoBehaviour
 
     void DeleteGroup(GameObject obj)
     {
-        //GroupItems.Remove(obj.name);
+        //GroupItems.Remove(obj);
         Destroy(obj);
+        //InitGroups();
     }
 
 
     void Add2myGroups(GameObject obj, ItemManagement item, GameObject del)
     {
-        obj.transform.SetParent(null);
-        obj.transform.SetParent(CousinItems.transform);
+        //obj.transform.SetParent(null);
+        //obj.transform.SetParent(CousinItems.transform);
+        
         item.groupStatus = GroupStatus.Member;
 
         // Add a new element to groupChallengers
@@ -124,14 +137,16 @@ public class GroupManagement : MonoBehaviour
         item.groupChallengers = newChallengers;
 
         // Add a new element to groupStats
+        /*
         string[] newStats = new string[item.groupStats.Length + 1];
         for (int i = 0; i < item.groupStats.Length; i++)
         {
             newStats[i] = item.groupStats[i];
         }
         newStats[newStats.Length - 1] = "0";
-        item.groupStats = newStats;
-        MemberRights(del);
+        item.groupStats = newStats;*/
+
+        //MemberRights(del);
         InitGroups();
 
         //List<TextMeshProUGUI> namesOfChallengers = new List<TextMeshProUGUI>();

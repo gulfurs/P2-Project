@@ -16,16 +16,15 @@ MonoBehaviour:
   groupName: PaintMasters
   groupColor: {r: 0.61960787, g: 0.5372549, b: 0.86666673, a: 1}
   groupDescription: 
-  groupStatus: 0
+  groupStatus: 1
   groupChallengers:
   - Donatello
   - Raphael
   - Michaelangelo
   - Leonardo
-  - Camilla Jensen (You)
   groupStats:
   - Done
   - Done
   - Done
   - Done
-  - 0
+  - Not Done
