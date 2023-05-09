@@ -11,7 +11,7 @@ public class CreateItem : MonoBehaviour
     public GameObject checkInput;
     public GameObject doneButton;
 
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject goalManagement;
 
     public List<ItemManagement> listOfGoals;
@@ -20,12 +20,9 @@ public class CreateItem : MonoBehaviour
     void Start()
     {
         //goalManagement = GameObject.FindGameObjectWithTag("EditorOnly");
-        goalManagement = GameObject.Find("GoalManager");
-        if (goalManagement != null)
-        {
-            //listOfGoals = goalManagement;
-            listOfGoals = goalManagement.GetComponent<GoalManagement>().goalItems;
-        }
+        goalManagement = GameObject.Find("GoalManagement") as GameObject;
+        //listOfGoals = goalManagement;
+        listOfGoals = goalManagement.GetComponent<GoalManagement>().goalItems;
     }
 
     // Update is called once per frame
@@ -54,21 +51,21 @@ public class CreateItem : MonoBehaviour
         // Create a new instance of the ScriptableObject
         var newItem = Instantiate(itemTemp);
 
-        // Set values on the item
+        //Set values on the item
         newItem.groupPhoto = null;
         newItem.groupName = nameInput;
         newItem.groupColor = new Color(1f, 0.549f, 0.353f);
 
         listOfGoals.Add(newItem);
-        
+
         goalManagement.GetComponent<GoalManagement>().goalItems = listOfGoals;
 
         // Saves the item as an asset in the project (if we need it)
         //AssetDatabase.CreateAsset(newItem, filepath);
         //AssetDatabase.SaveAssets();
 
-        Debug.Log(goalManagement.GetComponent<GoalManagement>().goalItems.Count);
+        //Debug.Log(goalManagement.GetComponent<GoalManagement>().goalItems.Count);
         goalManagement.GetComponent<GoalManagement>().InitializeGoals();
-        ;
+        
     }
 }

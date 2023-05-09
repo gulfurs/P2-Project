@@ -10,4 +10,11 @@ public class InvisibleTilClick : MonoBehaviour
         toggle.SetActive(!toggle.activeSelf);
     }
 
+    public void InvisibleToggle(GameObject toggle)
+    {
+        if(toggle.activeSelf == false) 
+        {
+            toggle.SetActive(toggle.activeSelf);
+        }
+    }
 }

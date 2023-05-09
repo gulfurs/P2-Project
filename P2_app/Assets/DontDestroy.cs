@@ -16,7 +16,10 @@ public class DontDestroy : MonoBehaviour
     private void Awake()
     {
         objectID = name + transform.position.ToString();
-    }   
+        //DebugManager.instance.enableRuntimeUI = false;
+    }
+    
+
 
 	void Start()
 	{

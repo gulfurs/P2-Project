@@ -33,12 +33,12 @@ public class GroupManagement : MonoBehaviour
     public void InitGroups()
 	{
         Canvas canvas = GameObject.FindGameObjectWithTag("GroupCanvas").GetComponent<Canvas>();
-        /*
-        GameObject[] prevGroupItems = GameObject.FindGameObjectsWithTag("GroupItem");
-        foreach (GameObject prevGroupItem in prevGroupItems)
+
+        for (int i = parentTab.transform.childCount - 1; i >= 0; i--)
         {
-            Destroy(prevGroupItem);
-        }*/
+            // Destroy each child object
+            Destroy(parentTab.transform.GetChild(i).gameObject);
+        }
 
         for (int i = 0; i <= GroupItems.Count - 1; i++)
         {
@@ -132,22 +132,25 @@ public class GroupManagement : MonoBehaviour
         newStats[newStats.Length - 1] = "0";
         item.groupStats = newStats;
         MemberRights(del);
+        InitGroups();
 
         //List<TextMeshProUGUI> namesOfChallengers = new List<TextMeshProUGUI>();
         //List<TextMeshProUGUI> statsOfChallengers = new List<TextMeshProUGUI>();
-
-        for (int j = 0; j < namesOfChallengers.Count && j < item.groupChallengers.Length && j < item.groupStats.Length; j++)
+        
+        /*for (int j = 0; j < namesOfChallengers.Count && j < item.groupChallengers.Length && j < item.groupStats.Length; j++)
         {
-            namesOfChallengers[j].text = item.groupChallengers[j];
-            statsOfChallengers[j].text = item.groupStats[j];
+            //namesOfChallengers[j].text = item.groupChallengers[j];
+            //statsOfChallengers[j].text = item.groupStats[j];
 
             if (namesOfChallengers[j].text.EndsWith("(You)"))
             {
                 namesOfChallengers[j].color = item.groupColor;
             }
-
-            Debug.Log(item.groupChallengers);
-        }
+            for (int i = 0; i < namesOfChallengers.Count; i++)
+            {
+                Debug.Log(namesOfChallengers[i].text + " " + i + "\n" + item.groupChallengers[j]);
+            }
+        }*/
         //UpdateChallengerData(obj.transform.Find("LeaderboardCanvas/LeaderTab/ScrollGroup/MyGroup/" + "Ranks"), item.groupChallengers, item.groupStats, item.groupColor);
     }
 
