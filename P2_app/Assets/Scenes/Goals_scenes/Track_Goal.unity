@@ -2564,7 +2564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Goal name
+  m_text: 'Walk
 
 '
   m_isRightToLeft: 0
