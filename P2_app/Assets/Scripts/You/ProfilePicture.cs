@@ -28,7 +28,9 @@ public class ProfilePicture : MonoBehaviour
     {
        // Finds the image on the button that is pressed
         replaceProfilePicture = EventSystem.current.currentSelectedGameObject.GetComponent<Image>();
+        // Closes the panel with the options for profile pictures
         editButton.gameObject.SetActive(false);
+        // sets profilepicture to the clicked image
         profilePicture.sprite = replaceProfilePicture.sprite;
     }
 

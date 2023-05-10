@@ -20,7 +20,7 @@ public class Calendar : MonoBehaviour
         public Color dayColor;
         public GameObject gameObject;
         public Color ourGreen = new Color(108f/255f, 197f/255f, 113f / 255f, 255f / 255f);
-        // Constructor of Day
+        // Constructor of Day we need a (number of the day, the color of the day, the object (button) it's on)
         public Day(int dayNumber, Color dayColor, GameObject gameObject)
         {
             this.dayNumber = dayNumber;
@@ -83,23 +83,28 @@ public class Calendar : MonoBehaviour
 
         // Create the days
         // This only happens for our first Update Calendar when we have no Day objects therefore we must create them
-
         if (days.Count == 0)
         {
+            // do for the 6 weeks
             for (int w = 0; w < 6; w++)
             {
+                // do for the 7 days
                 for (int i = 0; i < 7; i++)
                 {
                     Day newDay;
                     int currDay = (w * 7) + i;
+                    // if the day is not present this month meaning the 30th of feburary for example
+                    // Then make the object clear
                     if (currDay < startDay || currDay - startDay >= endDay)
                     {
                         newDay = new Day(currDay - startDay, Color.clear, weeks[w].GetChild(i).gameObject);
                     }
+                    // Else make the button white
                     else
                     {
                         newDay = new Day(currDay - startDay, Color.white, weeks[w].GetChild(i).gameObject);
                     }
+                    // apply
                     days.Add(newDay);
                 }
             }
@@ -112,6 +117,7 @@ public class Calendar : MonoBehaviour
             {
                 if (i < startDay || i - startDay >= endDay)
                 {
+                    // If nothing is on the day it makes it invisible
                     days[i].UpdateColor(Color.clear);
                 }
                 else
@@ -122,6 +128,7 @@ public class Calendar : MonoBehaviour
                 days[i].UpdateDay(i - startDay);
             }
         }
+        // This is just creating a color that matches our green
         Color ourGreen = new Color(108f / 255f, 197f / 255f, 113f / 255f, 255f / 255f);
         /// This just checks if today is on our calendar. If so, we highlight it in green
         if (DateTime.Now.Year == year && DateTime.Now.Month == month)
