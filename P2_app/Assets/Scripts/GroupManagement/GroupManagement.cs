@@ -6,20 +6,18 @@ using TMPro;
 
 public class GroupManagement : MonoBehaviour
 {
-    public GameObject groupItem;
-    public List<ItemManagement> GroupItems;
-    public GameObject CousinItems;
-    public TextMeshProUGUI groupTitle;
-    public GameObject parentTab;
-    public GameObject uncleTab;
-    //public Sprite deleteButtonSprite;
-    public GameObject deleteButton;
+    public GameObject groupItem;    //GroupItem template
+    public List<ItemManagement> GroupItems; //List of ItemManagement objects
+
+    public GameObject parentTab;    //Parent Tab for my groups
+    public GameObject uncleTab;     //Parent Tab for reccomended groups (Neglected)
+
+    public GameObject deleteButton;     //Delete button
+
+    List<TextMeshProUGUI> namesOfChallengers;   //List for names
+    List<TextMeshProUGUI> statsOfChallengers;   //List for stats
+
     // Start is called before the first frame update
-    //public string = 
-
-    List<TextMeshProUGUI> namesOfChallengers;
-    List<TextMeshProUGUI> statsOfChallengers;
-
     void Start()
     {
        InitGroups();
@@ -35,18 +33,20 @@ public class GroupManagement : MonoBehaviour
 	{
         Canvas canvas = GameObject.FindGameObjectWithTag("GroupCanvas").GetComponent<Canvas>();
 
+        // Destroy each child object in the parenttab
         for (int i = parentTab.transform.childCount - 1; i >= 0; i--)
         {
-            // Destroy each child object
+           
             Destroy(parentTab.transform.GetChild(i).gameObject);
         }
 
+        // Destroy each child object in the uncleTab
         for (int i = uncleTab.transform.childCount - 1; i >= 0; i--)
         {
-            // Destroy each child object
             Destroy(uncleTab.transform.GetChild(i).gameObject);
         }
 
+        //Creates all the groupObject, names them, colors them and more.
         for (int i = 0; i <= GroupItems.Count - 1; i++)
         {
             GameObject groupObject = Instantiate(groupItem, parentTab.transform);
@@ -54,7 +54,6 @@ public class GroupManagement : MonoBehaviour
             ItemManagement getItem = groupObject.GetComponent<StoreData>().itemData;
             getItem = GroupItems[i];
             groupObject.name = getItem.groupName;
-            
             groupObject.GetComponent<Image>().color = getItem.groupColor;
             groupObject.GetComponentInChildren<TextMeshProUGUI>().text = getItem.groupName;
             Transform imageOfGroup = groupObject.transform.Find("GroupPhoto");
@@ -86,9 +85,10 @@ public class GroupManagement : MonoBehaviour
             //Initializes the leaderboard
             Transform rankingOfGroup = groupObject.transform.Find(objectPath + "Ranks");
             
-
+            //Updates leaderboard for each group
             UpdateChallengerData(rankingOfGroup, getItem.groupChallengers, getItem.groupStats, getItem.groupColor);
 
+            //What status is the group?
             switch (getItem.groupStatus)
             {
                 case GroupStatus.Member:
@@ -97,7 +97,7 @@ public class GroupManagement : MonoBehaviour
                     MemberRights(delbutton);
                     break;
                 case GroupStatus.Uninvited:
-                    groupObject.transform.SetParent(uncleTab.transform);
+                    //groupObject.transform.SetParent(uncleTab.transform);
                     Transform joinButton = groupObject.transform.Find(objectPath + "UpperTab/Code/HideCode");
                     UninvitedRights(delbutton, joinButton);
                     joinButton.GetComponent<Button>().onClick.AddListener(() => Add2myGroups(groupObject, getItem, delbutton));
@@ -112,6 +112,7 @@ public class GroupManagement : MonoBehaviour
         }
     }
 
+    //Deletes the current group
     void DeleteGroup(GameObject obj)
     {
         //GroupItems.Remove(obj);
@@ -119,15 +120,11 @@ public class GroupManagement : MonoBehaviour
         //InitGroups();
     }
 
-
+    // Add new elements to leaderboard(For when you join)
     void Add2myGroups(GameObject obj, ItemManagement item, GameObject del)
     {
-        //obj.transform.SetParent(null);
-        //obj.transform.SetParent(CousinItems.transform);
-        
         item.groupStatus = GroupStatus.Member;
 
-        // Add a new element to groupChallengers
         string[] newChallengers = new string[item.groupChallengers.Length + 1];
         for (int i = 0; i < item.groupChallengers.Length; i++)
         {
@@ -135,54 +132,26 @@ public class GroupManagement : MonoBehaviour
         }
         newChallengers[newChallengers.Length - 1] = "Camilla Jensen (You)";
         item.groupChallengers = newChallengers;
-
-        // Add a new element to groupStats
-        /*
-        string[] newStats = new string[item.groupStats.Length + 1];
-        for (int i = 0; i < item.groupStats.Length; i++)
-        {
-            newStats[i] = item.groupStats[i];
-        }
-        newStats[newStats.Length - 1] = "0";
-        item.groupStats = newStats;*/
-
-        //MemberRights(del);
         InitGroups();
-
-        //List<TextMeshProUGUI> namesOfChallengers = new List<TextMeshProUGUI>();
-        //List<TextMeshProUGUI> statsOfChallengers = new List<TextMeshProUGUI>();
-        
-        /*for (int j = 0; j < namesOfChallengers.Count && j < item.groupChallengers.Length && j < item.groupStats.Length; j++)
-        {
-            //namesOfChallengers[j].text = item.groupChallengers[j];
-            //statsOfChallengers[j].text = item.groupStats[j];
-
-            if (namesOfChallengers[j].text.EndsWith("(You)"))
-            {
-                namesOfChallengers[j].color = item.groupColor;
-            }
-            for (int i = 0; i < namesOfChallengers.Count; i++)
-            {
-                Debug.Log(namesOfChallengers[i].text + " " + i + "\n" + item.groupChallengers[j]);
-            }
-        }*/
-        //UpdateChallengerData(obj.transform.Find("LeaderboardCanvas/LeaderTab/ScrollGroup/MyGroup/" + "Ranks"), item.groupChallengers, item.groupStats, item.groupColor);
     }
 
+    //If user is a administrator of the group
     void AdminRights(GameObject del) {
         del.GetComponentInChildren<TextMeshProUGUI>().text = "Delete Group";
     }
 
+    //If user is a member of the group
     void MemberRights(GameObject del) {
         del.GetComponentInChildren<TextMeshProUGUI>().text = "Leave Group";
     }
 
+    //If user is not yet a member of the group(Neglected)
     void UninvitedRights(GameObject del, Transform join) {
-        //Manage DeleteButton
         del.transform.parent.gameObject.SetActive(false);
         join.GetComponentInChildren<TextMeshProUGUI>().text = "Join Group";
     }
 
+    //Updates leaderboard with names and stats
     public void UpdateChallengerData(Transform obj, string[] names, string[] stats, Color color)
     {
         TextMeshProUGUI[] challengers = obj.GetComponentsInChildren<TextMeshProUGUI>();
@@ -225,12 +194,10 @@ public class GroupManagement : MonoBehaviour
             if (checkForName.text.StartsWith("Name:"))
             {
                 checkForName.text = null;
-                //checkForName.transform.parent.gameObject.SetActive(false);
             }
             else if (checkForName.text.StartsWith("xxx"))
             {
                 checkForName.text = null;
-                //checkForName.transform.parent.gameObject.SetActive(false);
             }
         }
     }

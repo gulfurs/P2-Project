@@ -7,48 +7,37 @@ using System;
 
 public class CreateItem : MonoBehaviour
 {
-    [SerializeField] private ItemManagement itemTemp;
-    public GameObject checkInput;
-    public GameObject doneButton;
+    [SerializeField] private ItemManagement itemTemp;  //ItemManagement object that the rest should follow
+    public GameObject checkInput;   //InputFieldfield
+    public GameObject doneButton;   //Button that is marked as done
 
-    //[HideInInspector]
-    public GameObject goalManagement;
+    public GameObject goalManagement;   //Goalmanagement object
 
-    public List<ItemManagement> listOfGoals;
+    public List<ItemManagement> listOfGoals;    //List of ItemManagement objects
 
     // Start is called before the first frame update
     void Start()
     {
-        //goalManagement = GameObject.FindGameObjectWithTag("EditorOnly");
+        //Picks up the goalItems list from the not destroyed GoalCanvas
         goalManagement = GameObject.Find("GoalManagement") as GameObject;
-        //listOfGoals = goalManagement;
         listOfGoals = goalManagement.GetComponent<GoalManagement>().goalItems;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //If there is no text in the input field will you not be able to click the doneButton
         string inputText = checkInput.GetComponent<TMPro.TMP_InputField>().text;
-        // bool isDuplicate = false;
-        // var items = AssetDatabase.FindAssets("t:ItemManagement", new[]{ "Assets/Groupitems" }); //Find all items that are labeled in Item Management in the folder GroupItems
-        // foreach (var GUID in items)
-        // {
-        //     var path = AssetDatabase.GUIDToAssetPath(GUID); //returns the file path for the scriptable object based on its ID
-        //     var asset = AssetDatabase.LoadAssetAtPath<ItemManagement>(path); //Loads the asset and it's components with the help from a located path
-        //     if (string.Equals(asset.groupName, inputText, StringComparison.OrdinalIgnoreCase))
-        //     {
-        //         isDuplicate = true;
-        //         break;
-        //     }
-        // }
-        doneButton.GetComponent<Button>().interactable = !string.IsNullOrEmpty(inputText) /*&& !isDuplicate */;
+        doneButton.GetComponent<Button>().interactable = !string.IsNullOrEmpty(inputText);
     }
 
+    //Creates a new Goal/GroupItem Item from buttonPress
     public void CreatingItem(GameObject groupInput)
     {
+        //Get text from input field
         string nameInput = groupInput.GetComponent<TMPro.TMP_InputField>().text;
-        //string filepath = "Assets/Groupitems/" + nameInput + ".asset";
-        // Create a new instance of the ScriptableObject
+
+        //Instantiates a newItem
         var newItem = Instantiate(itemTemp);
 
         //Set values on the item
@@ -56,15 +45,11 @@ public class CreateItem : MonoBehaviour
         newItem.groupName = nameInput;
         newItem.groupColor = new Color(1f, 0.549f, 0.353f);
 
+        //Updates the lists
         listOfGoals.Add(newItem);
-
         goalManagement.GetComponent<GoalManagement>().goalItems = listOfGoals;
 
-        // Saves the item as an asset in the project (if we need it)
-        //AssetDatabase.CreateAsset(newItem, filepath);
-        //AssetDatabase.SaveAssets();
-
-        //Debug.Log(goalManagement.GetComponent<GoalManagement>().goalItems.Count);
+        //Update the goal items (visually)
         goalManagement.GetComponent<GoalManagement>().InitializeGoals();
         
     }

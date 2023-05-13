@@ -6,41 +6,27 @@ using TMPro;
 
 public class GoalManagement : MonoBehaviour
 {
-    public GameObject goalItem;
-    public List<ItemManagement> goalItems;
-    //public TextMeshProUGUI goalTitle;
-    public GameObject parentingTab;
-    //public GameObject[] prevGoalItems;
+    public GameObject goalItem; //Template that the goals have to folllow
+    public List<ItemManagement> goalItems;  //List of each different item
+    public GameObject parentingTab; //Parentobject to throw the goals under (Vertical Layout Group helps organize it)
+    
     // Start is called before the first frame update
-
-
-
     void Start()
     {
         //StartCoroutine(InitGoals());
         InitializeGoals();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        /*GameObject[] getList = GameObject.FindGameObjectsWithTag("Respawn");
-        if (getList != null && getList.Length > 0)
-        {
-            goalItems = getList[0].GetComponent<CreateItem>().listOfGoals;
-        }*/
-    }
-
+    //Goals from the list are created
     public void InitializeGoals()
     {
-        Canvas canvas = GameObject.FindGameObjectWithTag("GoalCanvas").GetComponent<Canvas>();
-        
+        //Destroy each child object under the parentingTab (To avoid duplicates)
         for (int i = parentingTab.transform.childCount - 1; i >= 0; i--)
         {
-            // Destroy each child object
             Destroy(parentingTab.transform.GetChild(i).gameObject);
         }
 
+        //Instantiate each goalItem in the list under the parentingtab, and replaces details in the template.
         for (int i = 0; i <= goalItems.Count - 1; i++)
         {
             GameObject goalObject = Instantiate(goalItem, parentingTab.transform);
