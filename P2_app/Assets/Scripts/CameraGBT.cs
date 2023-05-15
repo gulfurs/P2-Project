@@ -8,16 +8,15 @@ public class CameraGBT : MonoBehaviour
 {
     private WebCamTexture camTexture;
     private RawImage img;
-    private bool isPaused = false;
+    //private bool isPaused = false;
 
     private void Start()
     {
         // Get the device's camera and display the feed on a texture
         WebCamDevice[] devices = WebCamTexture.devices;
-        if (devices.Length > 0)
+        if (devices.Length > 0) //Check if there is any device available
         {
-            camTexture = new WebCamTexture(devices[0].name);
-            //GetComponent<Renderer>().material.mainTexture = camTexture;
+            camTexture = new WebCamTexture(devices[0].name); //instanciate the texture to the device
             camTexture.Play();
         }
         img = GetComponent<RawImage>();
@@ -25,19 +24,19 @@ public class CameraGBT : MonoBehaviour
         img.material = null;
     }
 
-    private void FixedUpdate()
-    {
-        if (Time.timeScale == 0f && !isPaused)
-        {
-            camTexture.Stop();
-            isPaused = true;
+    // private void FixedUpdate()
+    // {
+    //     if (Time.timeScale == 0f && !isPaused)
+    //     {
+    //         camTexture.Stop();
+    //         isPaused = true;
             
-        }
-        else if (Time.timeScale != 0f && isPaused)
-        {
-            camTexture.Play();
-            isPaused = false;
-        }
-    }
+    //     }
+    //     else if (Time.timeScale != 0f && isPaused)
+    //     {
+    //         camTexture.Play();
+    //         isPaused = false;
+    //     }
+    // }
    
 }
