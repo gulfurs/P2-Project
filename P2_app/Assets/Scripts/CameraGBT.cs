@@ -25,6 +25,7 @@ public class CameraGBT : MonoBehaviour
         img.material = null;
     }
 
+<<<<<<< Updated upstream
 
     private void FixedUpdate()
     {
@@ -48,6 +49,15 @@ public class CameraGBT : MonoBehaviour
 
     //     // Capture a screenshot of the camera feed
        
+=======
+    // public void TakePhoto()
+    // {
+    //     // Capture a screenshot of the camera feed
+    //     Texture2D screenshot = new Texture2D(camTexture.width, camTexture.height);
+    //     screenshot.ReadPixels(new Rect(0, 0, camTexture.width, camTexture.height), 0, 0);
+    //     screenshot.Apply();
+
+>>>>>>> Stashed changes
     //     // Save the screenshot as an image file
     //     byte[] bytes = screenshot.EncodeToPNG();
     //     string filename = "photo_" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + ".png";
