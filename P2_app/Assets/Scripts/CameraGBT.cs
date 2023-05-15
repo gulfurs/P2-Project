@@ -25,8 +25,6 @@ public class CameraGBT : MonoBehaviour
         img.material = null;
     }
 
-<<<<<<< Updated upstream
-
     private void FixedUpdate()
     {
         if (Time.timeScale == 0f && !isPaused)
