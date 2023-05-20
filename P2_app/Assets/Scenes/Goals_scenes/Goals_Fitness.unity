@@ -2946,10 +2946,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315dd62da8c6c4f4caea9c12db7faf75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemTemp: {fileID: 11400000, guid: d4b789536e2382449909bcb8256c0baa, type: 2}
+  itemTemp: {fileID: 11400000, guid: 9ca06cc38d234304c81252be42b7986a, type: 2}
   checkInput: {fileID: 1201790908}
   doneButton: {fileID: 1816324559}
   goalManagement: {fileID: 0}
+  groupManagement: {fileID: 0}
   listOfGoals: []
 --- !u!4 &231608189
 Transform:

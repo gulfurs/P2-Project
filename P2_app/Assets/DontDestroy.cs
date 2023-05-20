@@ -8,23 +8,20 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-
     public string objectID;
     public string mainScene;
     public Canvas canvas;
 
     private void Awake()
     {
-        objectID = name + transform.position.ToString();
-        //DebugManager.instance.enableRuntimeUI = false;
+        objectID = name;    //ID is assigned the name of the object
     }
     
 
 
 	void Start()
 	{
-        //canvas.enabled = false;
-
+        //Iterates through all the different objects with the DontDestroy class and 
         for (int i = 0; i < Object.FindObjectsOfType<DontDestroy>().Length; i++)
 		{
             if (Object.FindObjectsOfType<DontDestroy>()[i] != this)
@@ -32,7 +29,7 @@ public class DontDestroy : MonoBehaviour
                 if (Object.FindObjectsOfType<DontDestroy>()[i].objectID == objectID)
 				{
                     Destroy(gameObject);
-                    Debug.Log("Destroying: " + gameObject);
+                    Debug.Log(Object.FindObjectsOfType<DontDestroy>().Length);
 				}
 			}
 		}
@@ -41,6 +38,7 @@ public class DontDestroy : MonoBehaviour
 
     void Update()
     {
+        //Disable the canvas if it isn't the right scene
         if (SceneManager.GetActiveScene().name == mainScene)
         {
             canvas.enabled = true;
