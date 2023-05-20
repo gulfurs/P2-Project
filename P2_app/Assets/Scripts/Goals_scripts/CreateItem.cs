@@ -12,7 +12,6 @@ public class CreateItem : MonoBehaviour
     public GameObject doneButton;   //Button that is marked as done
 
     public GameObject goalManagement;   //Goalmanagement object
-    public GameObject groupManagement;   //Goalmanagement object
 
     public List<ItemManagement> listOfGoals;    //List of ItemManagement objects
 
@@ -21,7 +20,6 @@ public class CreateItem : MonoBehaviour
     {
         //Picks up the goalItems list from the not destroyed GoalCanvas
         goalManagement = GameObject.Find("GoalManagement") as GameObject;
-        groupManagement = GameObject.Find("GroupManagement") as GameObject;
         listOfGoals = goalManagement.GetComponent<GoalManagement>().goalItems;
     }
 
@@ -43,19 +41,16 @@ public class CreateItem : MonoBehaviour
         var newItem = Instantiate(itemTemp);
 
         //Set values on the item
+        newItem.groupPhoto = null;
         newItem.groupName = nameInput;
         newItem.groupColor = new Color(1f, 0.549f, 0.353f);
 
         //Updates the lists
         listOfGoals.Add(newItem);
         goalManagement.GetComponent<GoalManagement>().goalItems = listOfGoals;
-        groupManagement.GetComponent<GroupManagement>().GroupItems.Add(newItem);
-
 
         //Update the goal items (visually)
         goalManagement.GetComponent<GoalManagement>().InitializeGoals();
-        groupManagement.GetComponent<GroupManagement>().InitGroups();
-
-
+        
     }
 }
